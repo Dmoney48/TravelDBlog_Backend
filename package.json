@@ -2,7 +2,10 @@
   "name": "nest-typescript-starter",
   "private": true,
   "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "engines": {
+    "node": "12.13.1"
+  },
+  "description": "Nest TypeScript starter project for Heroku",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
