@@ -1,14 +1,15 @@
 import * as mongoose from 'mongoose';
 
 export const BlogSchema = new mongoose.Schema ({
-    name: String,
-    message: String,
+    title: String,
+    description: String,
     likes: {type: Number, default: 0},
     dislikes: {type: Number, default: 0},
     latitude: Number,
     longitude: Number,
-    comment: Array, //(refs to blogs uniqueId)
+    content: String,
     user: Object, //(ref to user ID)
     author: String,
-    date_posted: String
+    date_posted: String,
+    image: String
 });
