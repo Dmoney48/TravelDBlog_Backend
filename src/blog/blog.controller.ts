@@ -42,6 +42,7 @@ export class BlogController {
     @Query('postID', new ValidateObjectId()) postID,
     @Body() createPostDTO: CreatePostDTO,
   ) {
+    const email = res.locals.user.email;
     const editedPost = await this.blogService.editPost(postID, createPostDTO);
     if (!editedPost) {
         throw new NotFoundException('Post does not exist!');
