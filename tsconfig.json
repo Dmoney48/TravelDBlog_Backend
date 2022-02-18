@@ -1,29 +1,27 @@
 {
-    "include": [
-        "src/**/*",
-        "test/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-    ],
-    "compilerOptions": {
-        "allowJs": true,
-        "lib": [
-            "es6"
-        ],
-        "target": "es6",
-        "pretty": true,
-        "module": "commonjs",
-        "declaration": true,
-        "removeComments": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
-        "skipLibCheck": true,
-        "outDir": "./dist",
-        "moduleResolution": "node",
-        "baseUrl": "./",
-        "incremental": true
-    }
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["es6"],
+    "target": "es6",
+    "pretty": true,
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "incremental": true
+  }
 }

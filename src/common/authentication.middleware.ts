@@ -1,5 +1,6 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import * as jwt from 'express-jwt';
+import jwt_decode from 'jwt-decode';
 import { expressJwtSecret } from 'jwks-rsa';
 import { Request, Response } from 'express';
 import * as dotenv from 'dotenv';
@@ -24,6 +25,15 @@ export class AuthenticationMiddleware implements NestMiddleware {
           return res.status(status).send({
             message,
           });
+        }
+        else {
+          const authHeader = req.header('authorization');
+          const bearerToken: string[] = authHeader.split(' ');
+          const token: string = bearerToken[1];
+          const decodedToken = jwt_decode(token);
+          console.log(decodedToken)
+          // DECODE TOKEN AND ADD USER TO REQUEST
+          res.locals.user = decodedToken;
         }
         next();
       });
