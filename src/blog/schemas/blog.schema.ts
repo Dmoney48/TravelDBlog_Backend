@@ -11,5 +11,7 @@ export const BlogSchema = new mongoose.Schema ({
     user: Object, //(ref to user ID)
     author: String,
     date_posted: String,
-    image: String
+    image: String,
+    email: String,
+    user_picture: String
 });
