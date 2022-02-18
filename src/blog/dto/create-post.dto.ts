@@ -13,6 +13,7 @@ export class CreatePostDTO {
     readonly date_posted: string;
     readonly image:string;
     readonly email: string;
+    readonly user_picture: string;
     // readonly title: string;
     // readonly description: string;
     // readonly body: string;
