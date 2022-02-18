@@ -43,14 +43,19 @@ export class BlogController {
     @Body() createPostDTO: CreatePostDTO,
   ) {
     const email = res.locals.user.email;
-    const editedPost = await this.blogService.editPost(postID, createPostDTO);
-    if (!editedPost) {
-        throw new NotFoundException('Post does not exist!');
+    if (createPostDTO.email != email) {
+      throw new NotFoundException('You do not have access');
     }
-    return res.status(HttpStatus.OK).json({
-      message: 'Post has been successfully updated',
-      post: editedPost,
-    });
+    else {
+      const editedPost = await this.blogService.editPost(postID, createPostDTO);
+      if (!editedPost) {
+          throw new NotFoundException('Post does not exist!');
+      }
+      return res.status(HttpStatus.OK).json({
+        message: 'Post has been successfully updated',
+        post: editedPost,
+      });
+    }
   }
   // Delete a post using ID
   @Delete('/delete')
